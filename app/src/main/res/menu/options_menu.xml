@@ -4,6 +4,12 @@
     <item android:id="@+id/delete_all_notes"
         android:title="Delete all notes"
         />
+    <item
+        android:id="@+id/dark_mode"
+        android:title="Switch Mode"
+
+        />
+
     <item android:id="@+id/searchbar"
         android:title="Searchbar"
         android:icon="@drawable/ic_baseline_search_24"

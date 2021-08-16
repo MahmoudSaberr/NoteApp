@@ -2,19 +2,27 @@ package com.example.notesapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.SearchView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -30,10 +38,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Model> notesList;
     DatabaseClass db;
     CoordinatorLayout coordinatorLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         coordinatorLayout =findViewById(R.id.layout_main);
         recyclerView = findViewById(R.id.recycler_view);
         fab = findViewById(R.id.btn_fab);
@@ -107,12 +118,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+
+
         if(item.getItemId()==R.id.delete_all_notes)
         {
             deleteAllNotes();
         }
 
-        return super.onOptionsItemSelected(item);
+         return super.onOptionsItemSelected(item);
     }
 
     private void deleteAllNotes(){
@@ -120,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         databaseClass.deleteAllNotes();
         recreate();
     }
+
 
     ItemTouchHelper.SimpleCallback callback= new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
         @Override

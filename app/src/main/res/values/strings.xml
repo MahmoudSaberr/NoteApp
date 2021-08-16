@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Notes App</string>
+
+
+    <!-- Strings for On Boarding Screen -->
+    <string name="let_get_started">Lets get started</string>
+
+    <string name="first_slide_title">Note</string>
+    <string name="first_slide_description">Welcome to your diary</string>
+
+    <string name="second_slide_title">Graces</string>
+    <string name="second_slide_description">Write your daily memoirs before going to sleep about the Graces you thank your Lord for,as He said in His Noble Quran</string>
+
+    <string name="third_slide_title">Quran</string>
+    <string name="third_slide_description">(Al-Duha) -11- "And proclaim the Grace of your Lord"</string>
+
+    <string name="skip_btn">Skip</string>
+    <!-- splash -->
+    <string name="app_name">Graces</string>
+    <string name="devrlop_by">Develop By Mahmoud Saber</string>
 </resources>
